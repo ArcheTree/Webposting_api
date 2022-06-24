@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang = "ko">
+<head>
+<meta charset="UTF-8">
+<title>HTML Class 2</title>
+</head>
+<body>
+<h1>Hello World</h1>
+	<!--  절대주소  : 컴퓨터에 있는 진짜 주소
+		"C:\Users\KB\Desktop\HTML chapter02-water\Penguins.jpg -> 실제 저장 위치  
+	-->
+	<img src = "C:\Users\KB\Desktop\HTML chapter02-water\Penguins.jpg"></img>
+	<!-- 상대 주소 
+		html 문서가 있는 위치에서 출발
+		./  > 현재 폴더   생략가능하나 가급적 사용(오류방지)
+		../  >상위 폴더       
+		/폴더이름 > 하위 폴더
+	-->
+	<img src = "../HTML chapter02-water/Penguins.jpg"/>
+	<img src = "../HTML chapter02-water/Penguins1.jpg" alt="오류 - 이미지 없음"/>
+	<img src = "https://imgnews.pstatic.net/image/117/2022/06/07/202206061849121516_1_20220607074403122.jpg?type=w647" 
+	alt="오류 - 이미지 없음"/>
+	<!-- 서버 사라지거나 등록사진 삭제시 같이 날라감  -->
+	<!-- alt - 이미지가 없을때 나오는 글을 지정 
+		width - 가로길이지정(PX)
+		height - 세로길이 니정(PX)
+		지정하지 않으면 파일 자체 길이로 들어감
+	-->
+	<img src = "../HTML chapter02-water/Penguins.jpg"
+	width = "300"
+	height = "50"
+	/>
+	<!-- 보통 높이, 가로 중 1개만 설정하여 비율 조정(사진 자체 비율 유지) -->
+	<img src = "../HTML chapter02-water/Penguins.jpg"
+		width = "300"
+	/>
+	<img src = "../HTML chapter02-water/Penguins.jpg"
+		height = "50"
+	/><br />
+	<img src = "http://via.placeholder.com/500x300"/>
+	<br />
+	
+	<!-- bgm (controls ->잘 안씀 배경음이기에) -->
+	<audio src="../HTML chapter02-water/Kalimba.mp3"
+	controls="controls" loop="loop">
+	</audio>
+	<audio src="../HTML chapter02-water/Kalimba.mp3"
+	controls loop> 
+	</audio>
+	
+	<!-- controls -컨트롤러, width, height -사이즈 poster -섬네일 -->
+	<video src="../HTML chapter02-water/Wildlife.mp4" 
+	controls="controls" 
+	width="600" 
+	poster="../HTML chapter02-water/Penguins.jpg">
+	
+	</video>
+	<video controls="controls" >
+		<source src="../HTML chapter02-water/Wildlife.mp4" >
+		<source src="../HTML chapter02-water/Wildlife.webm" type = "video/mp4" >
+	
+	</video>
+	<video controls="controls" >
+		<source src="https://sports.news.naver.com/video?id=950530" >
+	
+	</video>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/MYTbq7PPpOs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+	</iframe>
+	
+	<form action="localhost:8080">  <!--  action = "서버주소 넣는자리" -->
+		<input type="date" />
+		<input type="text" />
+		<input type="submit" />
+	</form>
+	<br />
+	<br />	
+	<!-- get 방식 -> 주소창에 데이터 보임
+		 post 방식 -> 주소창에 데이저 보이지 않음 -->
+	<form method="get">
+		<input type="date" />
+		<br />
+		<input type="text" />
+		<input type="submit" />
+		<br />
+		<input type="password" />
+		<br />
+		<input type="file" />
+		<br />
+		<input type="text" name="str1" />
+		<br />
+		<input type="button" >play</input>
+		<button>to TOP</button>
+		<br />
+		<input type ="reset" />
+		<input type ="radio" />
+		<br />
+		<label>ID : </label>
+		<input type ="text" />		
+		<br />
+		<label>PW : </label>
+		<input type ="password" />
+		<h1>3번 입력 오류시 망함</h1>
+		<h1>비밀번호는 8자리 이상</h1>
+		<input type ="email" />
+		<label>@</label>
+		<input type ="text" />
+		<br />		
+		<input type ="range" />
+		<input type ="text" />
+		<!-- 
+			radio - 선택지 중 1개만 선택해야할때
+			checkbox - 다중선택이 가능
+		 -->	
+		<br />		<!-- 서버에 받을떄 value 값으로 받음 -->
+		<input type="radio" name = "gender" value="man" checked="checked"/>남성
+		<input type="radio" name = "gender" value="woman"/>여성
+		<br />	
+		<input type = "checkbox">축구
+		<input type = "checkbox">농구
+		<input type = "checkbox">야구
+		<input type = "checkbox">롤
+		<br />
+		<textarea rows="5" cols="20">내용을 입력해주세요</textarea>
+			<br />
+		<select multiple="multiple">
+			<optgroup label = "점심장소">
+				<option>미도반점</option>
+				<option>도쿄라멘</option>
+				<option>착한식당</option>
+				<option>정가네</option>
+				<option>편의점</option>
+			</optgroup>
+		</select>
+			<br />	<br />	<br />	<br />
+		<select>
+			<optgroup label="Html5">
+				<option>Multimedia</option>
+				<option>Connecticity</option>
+				<option>Device Access</option>
+				<option>Thriple</option>			
+			</optgroup>
+			<optgroup label="CSS">
+				<option>3D Transfrom</option>
+				<option>4D engineer</option>
+				<option>D</option>
+				<option>Te</option>			
+			</optgroup>
+		</select>
+	</form>
+	<form>
+		<fieldset>
+		<legend>로그인</legend>
+		<table>
+			<tr>
+				<td>이름</td>
+				<td><input id="name" type="text" /></td>
+			</tr>
+			<tr>
+				<td>이메일</td>
+				<td><input id="mail" type="email" /></td>
+			</tr>
+		
+		</table>
+		</fieldset>
+	
+	
+	</form>
+		
+		
+		
+</body>
+</html>
